@@ -56,14 +56,6 @@ session_start();
 
 
 	<div class="content">
-		
-		<h1>Sidebar Accordion</h1>
-
-		<p>In this example, we have added an accordion and a dropdown menu inside the side navigation.
-
-		Click on both to understand how they differ from each other. The accordion will push down the content, while the dropdown lays over the content.</p>
-
-		<input type="text" name="">
 
 
 	</div>

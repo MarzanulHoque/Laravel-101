@@ -13,7 +13,9 @@ session_start();
 
     }
 
-     $host="localhost";
+    // Fetching Data For Displaying
+
+        $host="localhost";
 
         $user="root";
 
