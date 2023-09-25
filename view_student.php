@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+    error_reporting(0);
+    session_start();
 
     if(!isset($_SESSION['username']))
     {
@@ -58,6 +59,13 @@ session_start();
     <div class="content">
         <center>
             <h1>All Students</h1>
+            <?php
+                if($_SESSION["message"])
+                {
+                    echo   $_SESSION["message"];
+                }
+                unset($_SESSION["message"]);
+            ?>
             <br>
             <div class="container">
 
@@ -68,6 +76,7 @@ session_start();
                         <th >Email</th>
                         <th >Phone</th>
                         <th >Password</th>
+                        <th >Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,6 +89,10 @@ session_start();
                         <td><?php echo $info['email']; ?></td>
                         <td><?php echo $info['phone']; ?></td>
                         <td><?php echo $info['password']; ?></td>
+                        <td class="btn btn-warning">
+                            <?php echo " <a onClick=\" javascript:return confirm('Are You Sure Wanna Delete This ?') \" 
+                                        href='delete.php?student_id={$info['id']}'>Delete</a>"; ?>
+                        </td>
                         </tr>
                         <?php
                         }
