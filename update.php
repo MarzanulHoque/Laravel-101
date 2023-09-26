@@ -101,22 +101,22 @@
                     
                     <div>
                         <label >Name</label>
-                        <input type="text" name="name" value=" <?php echo $info['username']; ?> ">
+                        <input type="text" name="name" value="<?php echo "{$info['username']}" ?>">
                     </div>
 
                     <div>
                         <label >Email</label>
-                        <input type="text" name="email" value=" <?php echo $info['email']; ?>">
+                        <input type="text" name="email" value="<?php echo "{$info['email']}"?>">
                     </div>
 
                     <div>
                         <label>Phone</label>
-                        <input type="text" name="phone" value=" <?php echo $info['phone']; ?>">
+                        <input type="text" name="phone" value="<?php echo "{$info['phone']}" ?>">
                     </div>
 
                     <div>
                         <label >Password</label>
-                        <input type="text" name="password" value=" <?php echo $info['password']; ?>">
+                        <input type="text" name="password" value="<?php echo "{$info['password']}" ?>">
                     </div>
 
                     <div  >
