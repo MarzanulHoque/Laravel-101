@@ -31,7 +31,11 @@
 
         $result = mysqli_query($data,$sql);
 
-       
+        if($_SESSION['message'])
+        {
+            echo "<script>alert('Data Updated Successfully')</script>";
+            unset($_SESSION['message']);
+        }       
 
 ?>
 
@@ -76,7 +80,9 @@
                         <th >Email</th>
                         <th >Phone</th>
                         <th >Password</th>
-                        <th >Action</th>
+                        <th >Delete</th>
+                        <th >Update</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -89,9 +95,13 @@
                         <td><?php echo $info['email']; ?></td>
                         <td><?php echo $info['phone']; ?></td>
                         <td><?php echo $info['password']; ?></td>
-                        <td class="btn btn-warning">
-                            <?php echo " <a onClick=\" javascript:return confirm('Are You Sure Wanna Delete This ?') \" 
+                        <td >
+                            <?php echo " <a class='btn btn-danger' onClick=\" javascript:return confirm('Are You Sure Wanna Delete This ?') \" 
                                         href='delete.php?student_id={$info['id']}'>Delete</a>"; ?>
+                        </td>
+                        <td >
+                            <?php echo " <a class='btn btn-primary' 
+                                        href='update.php?student_id={$info['id']}'>Update</a>"; ?>
                         </td>
                         </tr>
                         <?php
